@@ -1,0 +1,186 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1778829786671,
+  "projectRoot": "/Users/avatar05/www/Projects/mastersns/Avatar-driver/mastersns-driver",
+  "techStack": {
+    "languages": [
+      {
+        "name": "C/C++",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "Makefile"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "make build",
+    "testCommand": "make test",
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "scripts"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "ange_mastersns": {
+      "path": "ange_mastersns",
+      "purpose": null,
+      "fileCount": 13,
+      "lastAccessed": 1778829786655,
+      "keyFiles": [
+        "appspec.yml",
+        "composer.json",
+        "composer.lock",
+        "composer.phar",
+        "index.html"
+      ]
+    },
+    "docker": {
+      "path": "docker",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1778829786655,
+      "keyFiles": []
+    },
+    "mysql": {
+      "path": "mysql",
+      "purpose": null,
+      "fileCount": 5,
+      "lastAccessed": 1778829786655,
+      "keyFiles": [
+        "00_init_db.sql",
+        "mastersns.sql",
+        "mastersns_mgpf.sql",
+        "mastersns_sandbox.sql"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 3,
+      "lastAccessed": 1778829786658,
+      "keyFiles": [
+        "import-data.sh",
+        "init-project.sh",
+        "reset-all.sh"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": ".writer-memory/memory.json",
+      "accessCount": 5,
+      "lastAccessed": 1778727452838,
+      "type": "file"
+    },
+    {
+      "path": "CLAUDE.md",
+      "accessCount": 1,
+      "lastAccessed": 1778664809853,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/model/personality.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727147115,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/model/secretprofile.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727147333,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/model/personalitytype.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727147358,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/model/personalitytypeitem.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727150086,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/model/profile.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727154899,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/consts.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727163901,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/model/profiledata.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727169308,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/model/memberprofile.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727177382,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/model/personalitymatchprofile.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727182676,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/model/personalityscore.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727182728,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/model/personalitylog.php",
+      "accessCount": 1,
+      "lastAccessed": 1778727187768,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/config/simpleauth.php",
+      "accessCount": 1,
+      "lastAccessed": 1778740911849,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/classes/controller/admin/auth.php",
+      "accessCount": 1,
+      "lastAccessed": 1778740918692,
+      "type": "file"
+    },
+    {
+      "path": "ange_mastersns/fuel/app/config/development/db.php",
+      "accessCount": 1,
+      "lastAccessed": 1778740940929,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

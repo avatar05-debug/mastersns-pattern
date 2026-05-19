@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "MasterSNS-Story",
+    "genre": "SNS/Dating Story-driven System",
+    "created": "2026-05-14T00:00:00Z",
+    "lastModified": "2026-05-14T00:00:00Z"
+  },
+  "characters": {
+    "Linh": {
+      "arc": "Tò mò -> Hiểu biết -> Làm chủ",
+      "attitude": "Chủ động, cầu tiến",
+      "tone": "Lịch sự nhưng thẳng thắn",
+      "speechLevel": "Kính ngữ (존댓말)",
+      "keywords": [
+        "hệ thống",
+        "logic",
+        "tại sao"
+      ],
+      "taboo": [],
+      "emotional_baseline": "Điềm tĩnh",
+      "triggers": []
+    }
+  },
+  "world": {
+    "setting": "Hệ thống MasterSNS (Aocca)",
+    "rules": [],
+    "atmosphere": "Phức tạp, dữ liệu lớn, tính nhân văn",
+    "constraints": [],
+    "history": ""
+  },
+  "relationships": [],
+  "scenes": [],
+  "themes": [],
+  "synopsis": {
+    "protagonist_attitude": "",
+    "relationship_structure": "",
+    "emotional_theme": "",
+    "genre_contrast": "",
+    "ending_aftertaste": ""
+  }
+}

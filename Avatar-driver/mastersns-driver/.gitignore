@@ -1,0 +1,9 @@
+.DS_Store
+.env
+docker/db/db_data/
+docker/db/conf.d/
+docker/db/my.cnf
+docker/domain/*
+docker/domain/logs/*
+.initialized
+.data_imported

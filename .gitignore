@@ -1,4 +1,25 @@
-Project-repo/ange_mastersns/*
-Avatar-driver/mastersns-driver/ange_mastersns/
-.omc
-.serena
+# .omc/
+# .serena/
+Avatar-driver/mastersns-driver/.env
+Avatar-driver/mastersns-driver/mysql/mastersns_mgpf.sql
+Avatar-driver/mastersns-driver/mysql/mastersns_sandbox.sql
+Avatar-driver/mastersns-driver/mysql/mastersns.sql
+Avatar-driver/mastersns-driver/docker/db/db_data/
+
+# Large files and DB data
+./Avatar-driver/mastersns-driver/.gitnexus/lbug
+./Avatar-driver/mastersns-driver/mysql/mastersns.sql
+./Avatar-driver/mastersns-driver/mysql/mastersns_mgpf.sql
+./Avatar-driver/mastersns-driver/docker/db/db_data/binlog.000002
+./Avatar-driver/mastersns-driver/docker/db/db_data/mastersns/push_tokens.ibd
+./Avatar-driver/mastersns-driver/docker/db/db_data/mastersns/process_logs.ibd
+./Avatar-driver/mastersns-driver/docker/db/db_data/mastersns_mgpf/appleid_purchase_logs.ibd
+./Avatar-driver/mastersns-driver/docker/db/db_data/mastersns/unknown_mail_logs.ibd
+./Avatar-driver/mastersns-driver/docker/db/db_data/mastersns/admin_logs.ibd
+./Avatar-driver/mastersns-driver/docker/db/db_data/mastersns/member_profiles.ibd
+./Avatar-driver/mastersns-driver/docker/db/db_data/mastersns/members.ibd
+./Avatar-driver/mastersns-driver/docker/db/db_data/mastersns/member_aoccas.ibd
+
+# GitNexus and DB logs
+Avatar-driver/mastersns-driver/.gitnexus/lbug*
+Avatar-driver/mastersns-driver/docker/db/db_data/

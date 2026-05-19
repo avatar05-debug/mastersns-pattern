@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # Semaphore UI - Web interface
+  semaphore:
+    image: semaphoreui/semaphore:latest
+    container_name: angue_semaphore
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      SEMAPHORE_DB_HOST: semaphore_db
+      SEMAPHORE_DB_PORT: 5432
+      SEMAPHORE_DB_USER: semaphore
+      SEMAPHORE_DB_PASS: semaphore_password
+      SEMAPHORE_DB_NAME: semaphore
+      SEMAPHORE_DB: postgres
+      SEMAPHORE_PLAYBOOK_PATH: /tmp/semaphore
+      SEMAPHORE_ADMIN_PASSWORD: admin_password
+      SEMAPHORE_ADMIN_NAME: admin
+      SEMAPHORE_ADMIN_EMAIL: admin@localhost
+      SEMAPHORE_ADMIN: admin
+      SEMAPHORE_ACCESS_KEY_ENCRYPTION: your_access_key_encryption
+    volumes:
+      - ./semaphore/inventory:/inventory:ro
+      - ./semaphore/authorized-keys:/authorized-keys:ro  
+      - ./semaphore/config:/etc/semaphore:rw
+    depends_on:
+      - semaphore_db
+    networks:
+      - semaphore_net
+
+  # PostgreSQL database cho Semaphore
+  semaphore_db:
+    image: postgres:14
+    container_name: semaphore_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: semaphore
+      POSTGRES_PASSWORD: semaphore_password
+      POSTGRES_DB: semaphore
+    volumes:
+      - semaphore_db_data:/var/lib/postgresql/data
+    networks:
+      - semaphore_net
+
+volumes:
+  semaphore_db_data:
+
+networks:
+  semaphore_net:
+    driver: bridge

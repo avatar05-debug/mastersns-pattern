@@ -1,0 +1,28 @@
+{
+  "repoPath": "/Users/avatar05/www/Projects/mastersns/Avatar-driver/mastersns-driver",
+  "lastCommit": "3c4179e91754e1f046cc4252880063ee6e7e6e57",
+  "indexedAt": "2026-05-14T06:50:54.236Z",
+  "stats": {
+    "files": 3185,
+    "nodes": 105539,
+    "edges": 295298,
+    "communities": 7515,
+    "processes": 300,
+    "embeddings": 0
+  },
+  "capabilities": {
+    "graph": {
+      "provider": "ladybugdb",
+      "status": "available"
+    },
+    "fts": {
+      "provider": "ladybugdb-fts",
+      "status": "available"
+    },
+    "vectorSearch": {
+      "provider": "ladybugdb-vector",
+      "status": "unavailable",
+      "exactScanLimit": 10000
+    }
+  }
+}

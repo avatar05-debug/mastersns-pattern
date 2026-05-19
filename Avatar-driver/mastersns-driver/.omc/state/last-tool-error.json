@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd Avatar-driver/mastersns-driver && git add .agents/ skills-lock.json && git commit -m \\\"chore: track agents configuration and skills lock\\\" && cd ../.. && git status\",\"description\":\"Comm...",
+  "error": "Exit code 1\n(eval):cd:1: no such file or directory: Avatar-driver/mastersns-driver",
+  "timestamp": "2026-05-19T03:09:46.205Z",
+  "retry_count": 1
+}

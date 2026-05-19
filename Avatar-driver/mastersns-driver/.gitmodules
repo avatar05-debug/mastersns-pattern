@@ -1,0 +1,4 @@
+[submodule "ange_mastersns"]
+	path = ange_mastersns
+	url = git@github.com:newbeescoltd/ange_mastersns.git
+	branch = master
