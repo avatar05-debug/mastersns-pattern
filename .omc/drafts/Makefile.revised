@@ -1,3 +1,5 @@
+# Revised Makefile with Safety Gates
+
 .PHONY: up down init import reset ps logs git-push git-pull git-push-dry git-pull-dry
 
 # Synchronization configuration
@@ -48,6 +50,7 @@ git-pull-dry:
 	@echo "🔍 DRY RUN: Syncing $(TARGET_DIR) -> $(SRC_DIR)"
 	rsync -avn --delete --exclude='.git' --exclude='node_modules' --exclude='.env' $(TARGET_DIR)/ $(SRC_DIR)/
 
+# ... (rest of docker commands)
 up:
 	docker-compose up -d
 

@@ -44,6 +44,43 @@
       "keyFiles": []
     }
   },
-  "hotPaths": [],
+  "hotPaths": [
+    {
+      "path": "Avatar-driver/mastersns-driver/Makefile",
+      "accessCount": 7,
+      "lastAccessed": 1779166242861,
+      "type": "file"
+    },
+    {
+      "path": "INSTRUCTIONS.md",
+      "accessCount": 7,
+      "lastAccessed": 1779170799946,
+      "type": "file"
+    },
+    {
+      "path": "Avatar-driver/mastersns-driver/README.md",
+      "accessCount": 4,
+      "lastAccessed": 1779166153125,
+      "type": "file"
+    },
+    {
+      "path": "Avatar-driver/mastersns-driver/scripts/init-project.sh",
+      "accessCount": 3,
+      "lastAccessed": 1779166051723,
+      "type": "file"
+    },
+    {
+      "path": "Avatar-driver/mastersns-driver/scripts/import-data.sh",
+      "accessCount": 2,
+      "lastAccessed": 1779166051669,
+      "type": "file"
+    },
+    {
+      "path": "Avatar-driver/mastersns-driver/AGENTS.md",
+      "accessCount": 1,
+      "lastAccessed": 1779170789789,
+      "type": "file"
+    }
+  ],
   "userDirectives": []
 }

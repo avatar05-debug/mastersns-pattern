@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git push origin main --force && git status\",\"description\":\"Final force push to ensure clean state on GitHub\"}",
-  "error": "Exit code 1\nremote: error: Trace: df16c6e8fa6e0d569c117d3ca9d81ca8e4a1deda56ef3e49347f6a0c6e9d7f57        \nremote: error: See https://gh.io/lfs for more information.        \nremote: error: File Avatar-driver/mastersns-driver/.gitnexus/lbug is 2652.83 MB; this exceeds GitHub's file size limit of 100.00 MB        \nremote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.        \nTo https://github.com/avatar05-debug/mastersns-pattern.git\n !...",
-  "timestamp": "2026-05-19T04:34:38.488Z",
-  "retry_count": 1
-}
