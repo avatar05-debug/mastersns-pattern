@@ -160,10 +160,28 @@ Dự án sử dụng mô hình **Driver/Project Pattern**.
    git submodule update --init --recursive
    ```
 
+4. **Thiết lập Môi trường Local**:
+   ```bash
+   cp -r environments/development ange_mastersns/fuel/app/config/
+   ```
+   (Lưu ý: Thực hiện lệnh này tại thư mục `Avatar-driver/mastersns-driver/`)
+
+5. **Clone Giao diện Admin**:
+   ```bash
+   cd ange_mastersns/fuel/app/classes/controller/
+   git clone git@github.com:newbeescoltd/ange_admin.git admin
+   ```
+   (Lưu ý: Thực hiện lệnh này để thiết lập giao diện quản trị Admin)
+
 ---
 
 ## Bước 4: Khởi chạy Môi trường Docker
 Sử dụng Makefile để tự động hóa việc khởi tạo container và dữ liệu.
+
+> **Lưu ý quan trọng về Dữ liệu**:
+> Một số file SQL có dung lượng rất lớn (`mastersns_mgpf.sql`, `mastersns_sandbox.sql`, `mastersns.sql`) không được đính kèm trong Git. 
+> Trước khi thực hiện lệnh import, hãy liên hệ Admin để nhận các file này và đặt vào thư mục:
+> `Avatar-driver/mastersns-driver/mysql/`
 
 ```bash
 # Tại Avatar-driver/mastersns-driver/
