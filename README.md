@@ -2,7 +2,7 @@
 
 Tài liệu này hướng dẫn quy trình cài đặt từ đầu cho một máy mới, sắp xếp theo thứ tự ưu tiên các bước cần thực hiện.
 
-## 🛑 CẢNH BÁO NGUY HIỂM (DANGER WARNING)
+## 🛑 CẢNH BÁO (DANGER WARNING)
 Lệnh đồng bộ (`make git-push` và `make git-pull`) sử dụng `rsync --delete`. 
 **Bất kỳ file nào có ở thư mục đích nhưng không có ở thư mục nguồn sẽ bị XÓA VĨNH VIỄN.**
 - Luôn chạy `make git-push-dry` hoặc `make git-pull-dry` trước khi thực hiện đồng bộ thật.
@@ -29,11 +29,6 @@ Trước khi bắt đầu, bạn cần cài đặt Claude Code CLI và cấu hì
        "ANTHROPIC_DEFAULT_OPUS_MODEL": "gemini/gemini-3-flash-preview",
        "ANTHROPIC_AUTH_TOKEN": "Your_Key_Ở_Đây",
        "ANTHROPIC_BASE_URL": "https://llm.nal.vn",
-       "API_TIMEOUT_MS": "3000000",
-       "MCP_TIMEOUT": "60000",
-       "MCP_TOOL_TIMEOUT": "120000",
-       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "3,4,5",
-       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS_ENABLED": "true"
      }
    }
    ```
@@ -66,6 +61,14 @@ Dự án sử dụng cơ chế quản lý tri thức đặc biệt của Claude 
 4. **Dreaming (Context Compression)**:
    Khi cuộc hội thoại quá dài, Claude sẽ thực hiện "Dreaming" để tóm tắt bối cảnh quan trọng và giải phóng bộ nhớ. Quá trình này giúp duy trì hiệu suất làm việc mà không làm mất đi các thông tin then chốt.
 
+5. **Tự động hóa Kỹ năng (AutoSkills)**:
+   Sử dụng `autoskills` để tự động phát hiện Tech Stack của dự án và cài đặt các kỹ năng AI (skills) phù hợp.
+   - **Cách thực hiện**: Chạy lệnh sau tại thư mục gốc của dự án:
+     ```bash
+     npx autoskills
+     ```
+   - **Tác dụng**: Tự động cài đặt các kỹ năng bổ trợ dựa trên FuelPHP, Vue, TypeScript và Docker có trong dự án.
+
 ---
 
 ## Bước 2: Cấu hình Công cụ AI Hỗ trợ (MCP & Plugins)
@@ -94,6 +97,44 @@ Sau khi có Claude Code, hãy thiết lập các công cụ bổ trợ.
    Đảm bảo các plugin sau đã được bật trong Claude Code (kiểm tra qua `/config`):
    - `serena`: Công cụ thao tác code an toàn.
    - `context7`: Tra cứu tài liệu thư viện.
+
+---
+
+## Hướng dẫn sử dụng GitNexus CLI & API Gateway
+
+Dự án sử dụng GitNexus để phân tích mã nguồn và tự động hóa tài liệu kiến trúc. Để tối ưu hiệu suất và sử dụng tài nguyên nội bộ, chúng ta cấu hình GitNexus kết nối qua API Gateway.
+
+### 1. Cấu hình API Gateway cho GitNexus
+
+Để sử dụng tính năng tra cứu thông minh và đồng bộ tài liệu, bạn cần cấu hình các thông số sau:
+
+*   **Chạy giao diện Wiki với Gateway**:
+    Sử dụng flag `--base-url` để trỏ về server nội bộ:
+    ```bash
+    npx gitnexus wiki --base-url https://llm.nal.vn
+    ```
+
+*   **Cấu hình Embedding cho lệnh `analyze`**:
+    Để tính năng tìm kiếm ngữ nghĩa (semantic search) hoạt động, hãy thiết lập các biến môi trường sau trong file `.zshrc` hoặc `.bashrc`:
+    ```bash
+    export GITNEXUS_EMBEDDING_URL=https://llm.nal.vn/v1
+    export GITNEXUS_EMBEDDING_API_KEY=your-key-here
+    ```
+    *Lưu ý: Liên hệ Leader để lấy API Key.*
+
+### 2. Khi nào cần chạy lệnh GitNexus?
+
+Việc chạy lệnh đúng thời điểm giúp duy trì chỉ mục (index) luôn mới và hỗ trợ AI đưa ra câu trả lời chính xác nhất.
+
+*   **`npx gitnexus analyze`**:
+    *   Sau khi thực hiện các thay đổi lớn về code (thêm module mới, đổi cấu trúc thư mục).
+    *   Khi công cụ báo trạng thái index bị "stale" (cũ).
+    *   Ngay sau khi merge các nhánh (Branch) lớn vào `main`.
+
+*   **`npx gitnexus wiki`**:
+    *   Khi bạn cần cập nhật hoặc xem tài liệu kiến trúc được tự động trích xuất.
+    *   Khi có thành viên mới gia nhập dự án để họ nhanh chóng nắm bắt luồng code.
+    *   Trước khi thực hiện các đợt Review kiến trúc lớn.
 
 ---
 
@@ -148,4 +189,5 @@ make import  # Nạp dữ liệu mẫu vào Database
 - [ ] `make ps`: Tất cả container đều `Up`.
 - [ ] Claude Code hoạt động (kết nối thành công qua Gateway).
 - [ ] `gitnexus_impact`: MCP hoạt động bình thường.
+- [ ] `npx autoskills`: Các kỹ năng AI đã được cài đặt.
 - [ ] Tính năng Agent Teams hoạt động.
