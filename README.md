@@ -71,32 +71,47 @@ Dự án sử dụng cơ chế quản lý tri thức đặc biệt của Claude 
 
 ---
 
-## Bước 2: Cấu hình Công cụ AI Hỗ trợ (MCP & Plugins)
-Sau khi có Claude Code, hãy thiết lập các công cụ bổ trợ.
+## Bước 2: Cấu hình Công cụ AI Hỗ trợ (GitNexus & Serena)
+Dự án sử dụng cơ chế Model Context Protocol (MCP) để cung cấp cho Claude các công cụ phân tích và thao tác code chuyên sâu.
 
-1. **Cài đặt oh-my-claudecode (OMC)**:
-   Mở Claude Code và chạy lệnh:
-   ```bash
-   /oh-my-claudecode:omc-setup
-   ```
+### 1. Cấu hình MCP (mcp.json)
+Thêm cấu hình sau vào file `~/.claude/mcp.json` để kích hoạt các công cụ AI:
 
-2. **Cấu hình MCP GitNexus**:
-   Thêm vào file `~/.claude/mcp.json`:
-   ```json
-   {
-     "mcpServers": {
-       "gitnexus": {
-         "command": "npx",
-         "args": ["-y", "gitnexus@latest", "mcp"]
-       }
-     }
-   }
-   ```
+```json
+{
+  "mcpServers": {
+    "gitnexus": {
+      "command": "npx",
+      "args": ["-y", "gitnexus@latest", "mcp"]
+    },
+    "serena": {
+      "command": "npx",
+      "args": ["-y", "serena-mcp@latest"]
+    }
+  }
+}
+```
 
-3. **Cài đặt Plugin Bắt buộc**:
-   Đảm bảo các plugin sau đã được bật trong Claude Code (kiểm tra qua `/config`):
-   - `serena`: Công cụ thao tác code an toàn.
-   - `context7`: Tra cứu tài liệu thư viện.
+### 2. Khởi tạo Serena cho dự án
+Serena cần một file cấu hình tại thư mục làm việc để hiểu cấu trúc code.
+
+1.  **Di chuyển đến thư mục Driver**:
+    ```bash
+    cd Avatar-driver/mastersns-driver/
+    ```
+
+2.  **Chạy lệnh khởi tạo**:
+    ```bash
+    npx serena init
+    ```
+
+3.  **Khi nào cần chạy `serena init`?**
+    *   **Thiết lập lần đầu**: Khi mới clone dự án về máy.
+    *   **Thay đổi bối cảnh**: Khi bạn thay đổi lớn về cấu trúc thư mục hoặc Tech Stack.
+    *   **Khôi phục**: Nếu Claude không thể nhận diện được các symbol (class, function) trong dự án.
+
+> **CẢNH BÁO VỀ CWD (Working Directory)**:
+> Để Serena và GitNexus hoạt động chính xác, bạn **PHẢI** khởi chạy Claude Code tại thư mục gốc của Driver (`Avatar-driver/mastersns-driver/`).
 
 ---
 
