@@ -15,7 +15,7 @@ Trước khi bắt đầu, bạn cần cài đặt Claude Code CLI và cấu hì
 
 1. **Cài đặt Claude Code**:
    ```bash
-   curl -fsSL https://claude.ai/install.sh | bash
+   npm install -g @anthropic-ai/claude-code
    ```
 
 2. **Cấu hình Môi trường (BẮT BUỘC)**:
@@ -28,7 +28,7 @@ Trước khi bắt đầu, bạn cần cài đặt Claude Code CLI và cấu hì
        "ANTHROPIC_DEFAULT_SONNET_MODEL": "gemini/gemini-3-flash-preview",
        "ANTHROPIC_DEFAULT_OPUS_MODEL": "gemini/gemini-3-flash-preview",
        "ANTHROPIC_AUTH_TOKEN": "Your_Key_Ở_Đây",
-       "ANTHROPIC_BASE_URL": "https://llm.nal.vn",
+       "ANTHROPIC_BASE_URL": "https://llm.nal.vn"
      }
    }
    ```
