@@ -15,7 +15,7 @@ Trước khi bắt đầu, bạn cần cài đặt Claude Code CLI và cấu hì
 
 1. **Cài đặt Claude Code**:
    ```bash
-   npm install -g @anthropic-ai/claude-code
+   curl -fsSL https://claude.ai/install.sh | bash
    ```
 
 2. **Cấu hình Môi trường (BẮT BUỘC)**:
