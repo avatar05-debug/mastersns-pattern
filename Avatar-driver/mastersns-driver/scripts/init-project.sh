@@ -17,6 +17,14 @@ until docker-compose exec -T $DB_CONTAINER mysql -uroot -p11111111 -e "SELECT 1"
 done
 echo -e "\n✅ MySQL is ready!"
 
+echo "📦 Installing Composer dependencies..."
+docker-compose exec -T $APP_CONTAINER composer install
+
+echo "📂 Setting up permissions for cache and logs..."
+docker-compose exec -T $APP_CONTAINER mkdir -p fuel/app/cache/fuel/agent
+docker-compose exec -T $APP_CONTAINER mkdir -p fuel/app/logs
+docker-compose exec -T $APP_CONTAINER chmod -R 777 fuel/app/cache fuel/app/logs
+
 echo "⚙️ Running FuelPHP Migrations..."
 docker-compose exec -T $APP_CONTAINER php oil refine migrate --all
 

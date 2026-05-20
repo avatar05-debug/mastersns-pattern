@@ -60,6 +60,7 @@ down:
 init:
 	@echo "📦 Initializing submodules..."
 	git submodule update --init --recursive
+	docker-compose build
 	$(MAKE) up
 	chmod +x scripts/init-project.sh
 	./scripts/init-project.sh

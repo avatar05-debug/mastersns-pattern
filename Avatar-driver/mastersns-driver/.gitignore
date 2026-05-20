@@ -5,5 +5,8 @@ docker/db/conf.d/
 docker/db/my.cnf
 docker/domain/*
 docker/domain/logs/*
+mysql/mastersns_mgpf.sql
+mysql/mastersns_sandbox.sql
+mysql/mastersns.sql
 .initialized
 .data_imported
